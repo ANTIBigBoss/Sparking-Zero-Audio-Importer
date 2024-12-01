@@ -1,0 +1,151 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Mitch\\source\\repos\\Sparking Zero Audio Importer\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{ED998EAD-2EB5-4700-AC39-9F1DB1892128}|SparkingZeroAudioImporter.csproj|C:\\Users\\Mitch\\source\\repos\\Sparking Zero Audio Importer\\helpermethods.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED998EAD-2EB5-4700-AC39-9F1DB1892128}|SparkingZeroAudioImporter.csproj|solutionrelative:helpermethods.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED998EAD-2EB5-4700-AC39-9F1DB1892128}|SparkingZeroAudioImporter.csproj|C:\\Users\\Mitch\\source\\repos\\Sparking Zero Audio Importer\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED998EAD-2EB5-4700-AC39-9F1DB1892128}|SparkingZeroAudioImporter.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED998EAD-2EB5-4700-AC39-9F1DB1892128}|SparkingZeroAudioImporter.csproj|c:\\users\\mitch\\source\\repos\\sparking zero audio importer\\constants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED998EAD-2EB5-4700-AC39-9F1DB1892128}|SparkingZeroAudioImporter.csproj|solutionrelative:constants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED998EAD-2EB5-4700-AC39-9F1DB1892128}|Sparking Zero Audio Importer.csproj|C:\\Users\\Mitch\\source\\repos\\Sparking Zero Audio Importer\\constants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED998EAD-2EB5-4700-AC39-9F1DB1892128}|Sparking Zero Audio Importer.csproj|solutionrelative:constants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED998EAD-2EB5-4700-AC39-9F1DB1892128}|SparkingZeroAudioImporter.csproj|C:\\Users\\Mitch\\source\\repos\\Sparking Zero Audio Importer\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{ED998EAD-2EB5-4700-AC39-9F1DB1892128}|SparkingZeroAudioImporter.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED998EAD-2EB5-4700-AC39-9F1DB1892128}|Sparking Zero Audio Importer.csproj|C:\\Users\\Mitch\\source\\repos\\Sparking Zero Audio Importer\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED998EAD-2EB5-4700-AC39-9F1DB1892128}|Sparking Zero Audio Importer.csproj|solutionrelative:form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED998EAD-2EB5-4700-AC39-9F1DB1892128}|SparkingZeroAudioImporter.csproj|C:\\Users\\Mitch\\source\\repos\\Sparking Zero Audio Importer\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED998EAD-2EB5-4700-AC39-9F1DB1892128}|SparkingZeroAudioImporter.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED998EAD-2EB5-4700-AC39-9F1DB1892128}|Sparking Zero Audio Importer.csproj|C:\\Users\\Mitch\\source\\repos\\Sparking Zero Audio Importer\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED998EAD-2EB5-4700-AC39-9F1DB1892128}|Sparking Zero Audio Importer.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "HelperMethods.cs",
+              "DocumentMoniker": "C:\\Users\\Mitch\\source\\repos\\Sparking Zero Audio Importer\\HelperMethods.cs",
+              "RelativeDocumentMoniker": "HelperMethods.cs",
+              "ToolTip": "C:\\Users\\Mitch\\source\\repos\\Sparking Zero Audio Importer\\HelperMethods.cs",
+              "RelativeToolTip": "HelperMethods.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAALIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-30T19:18:05.19Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Constants.cs",
+              "DocumentMoniker": "C:\\Users\\Mitch\\source\\repos\\Sparking Zero Audio Importer\\Constants.cs",
+              "RelativeDocumentMoniker": "Constants.cs",
+              "ToolTip": "C:\\Users\\Mitch\\source\\repos\\Sparking Zero Audio Importer\\Constants.cs",
+              "RelativeToolTip": "Constants.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAI4BAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-29T21:59:39.284Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\Mitch\\source\\repos\\Sparking Zero Audio Importer\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "C:\\Users\\Mitch\\source\\repos\\Sparking Zero Audio Importer\\Form1.cs",
+              "RelativeToolTip": "Form1.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0BAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-29T19:26:55.058Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Mitch\\source\\repos\\Sparking Zero Audio Importer\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\Mitch\\source\\repos\\Sparking Zero Audio Importer\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAQwBIAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T22:55:35.138Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Mitch\\source\\repos\\Sparking Zero Audio Importer\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "C:\\Users\\Mitch\\source\\repos\\Sparking Zero Audio Importer\\Form1.cs [Design]",
+              "RelativeToolTip": "Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T19:11:13.32Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Constants.cs",
+              "DocumentMoniker": "C:\\Users\\Mitch\\source\\repos\\Sparking Zero Audio Importer\\Constants.cs",
+              "RelativeDocumentMoniker": "Constants.cs",
+              "ToolTip": "C:\\Users\\Mitch\\source\\repos\\Sparking Zero Audio Importer\\Constants.cs",
+              "RelativeToolTip": "Constants.cs",
+              "ViewState": "AQIAAJgAAAAAAAAAAAAwwLMAAABXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T17:42:41.922Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Mitch\\source\\repos\\Sparking Zero Audio Importer\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\Mitch\\source\\repos\\Sparking Zero Audio Importer\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-15T20:07:53.545Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Form1.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Mitch\\source\\repos\\Sparking Zero Audio Importer\\Form1.Designer.cs",
+              "RelativeDocumentMoniker": "Form1.Designer.cs",
+              "ToolTip": "C:\\Users\\Mitch\\source\\repos\\Sparking Zero Audio Importer\\Form1.Designer.cs",
+              "RelativeToolTip": "Form1.Designer.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-15T20:07:45.111Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
