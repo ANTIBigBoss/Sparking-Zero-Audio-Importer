@@ -89,6 +89,10 @@ Before you start, you'll need:
 - Click **Create Ryo Mod Folder**.  
   The tool will convert your files and set up the mod automatically.
 
+### 7. Keep Mod for yourself or Upload to a mod site
+- Here's a mod I made entirely with my tool:
+  [Gladius Theme Music Packs](https://www.nexusmods.com/dragonballsparkingzero/mods/488)
+
 ---
 
 ## Activating Your Mod
