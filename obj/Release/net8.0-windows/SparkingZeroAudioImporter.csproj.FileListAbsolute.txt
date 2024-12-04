@@ -1,0 +1,38 @@
+C:\Users\Mitch\source\repos\Sparking Zero Audio Importer\bin\Release\net8.0-windows\Sparking Zero Audio Importer.exe
+C:\Users\Mitch\source\repos\Sparking Zero Audio Importer\bin\Release\net8.0-windows\Sparking Zero Audio Importer.dll.config
+C:\Users\Mitch\source\repos\Sparking Zero Audio Importer\bin\Release\net8.0-windows\Sparking Zero Audio Importer.dll.manifest
+C:\Users\Mitch\source\repos\Sparking Zero Audio Importer\bin\Release\net8.0-windows\Sparking Zero Audio Importer.application
+C:\Users\Mitch\source\repos\Sparking Zero Audio Importer\bin\Release\net8.0-windows\Sparking Zero Audio Importer.deps.json
+C:\Users\Mitch\source\repos\Sparking Zero Audio Importer\bin\Release\net8.0-windows\Sparking Zero Audio Importer.runtimeconfig.json
+C:\Users\Mitch\source\repos\Sparking Zero Audio Importer\bin\Release\net8.0-windows\Sparking Zero Audio Importer.dll
+C:\Users\Mitch\source\repos\Sparking Zero Audio Importer\bin\Release\net8.0-windows\Sparking Zero Audio Importer.pdb
+C:\Users\Mitch\source\repos\Sparking Zero Audio Importer\bin\Release\net8.0-windows\NAudio.dll
+C:\Users\Mitch\source\repos\Sparking Zero Audio Importer\bin\Release\net8.0-windows\NAudio.Asio.dll
+C:\Users\Mitch\source\repos\Sparking Zero Audio Importer\bin\Release\net8.0-windows\NAudio.Core.dll
+C:\Users\Mitch\source\repos\Sparking Zero Audio Importer\bin\Release\net8.0-windows\NAudio.Midi.dll
+C:\Users\Mitch\source\repos\Sparking Zero Audio Importer\bin\Release\net8.0-windows\NAudio.Wasapi.dll
+C:\Users\Mitch\source\repos\Sparking Zero Audio Importer\bin\Release\net8.0-windows\NAudio.WinForms.dll
+C:\Users\Mitch\source\repos\Sparking Zero Audio Importer\bin\Release\net8.0-windows\NAudio.WinMM.dll
+C:\Users\Mitch\source\repos\Sparking Zero Audio Importer\bin\Release\net8.0-windows\System.ComponentModel.Composition.dll
+C:\Users\Mitch\source\repos\Sparking Zero Audio Importer\bin\Release\net8.0-windows\Microsoft.WindowsAPICodePack.Core.dll
+C:\Users\Mitch\source\repos\Sparking Zero Audio Importer\bin\Release\net8.0-windows\Microsoft.WindowsAPICodePack.ExtendedLinguisticServices.dll
+C:\Users\Mitch\source\repos\Sparking Zero Audio Importer\bin\Release\net8.0-windows\Microsoft.WindowsAPICodePack.Sensors.dll
+C:\Users\Mitch\source\repos\Sparking Zero Audio Importer\bin\Release\net8.0-windows\Microsoft.WindowsAPICodePack.Shell.dll
+C:\Users\Mitch\source\repos\Sparking Zero Audio Importer\bin\Release\net8.0-windows\Microsoft.WindowsAPICodePack.ShellExtensions.dll
+C:\Users\Mitch\source\repos\Sparking Zero Audio Importer\obj\Release\net8.0-windows\SparkingZeroAudioImporter.csproj.AssemblyReference.cache
+C:\Users\Mitch\source\repos\Sparking Zero Audio Importer\obj\Release\net8.0-windows\SparkingZeroAudioImporter.Form1.resources
+C:\Users\Mitch\source\repos\Sparking Zero Audio Importer\obj\Release\net8.0-windows\Sparking_Zero_Audio_Importer.Properties.Resources.resources
+C:\Users\Mitch\source\repos\Sparking Zero Audio Importer\obj\Release\net8.0-windows\SparkingZeroAudioImporter.csproj.GenerateResource.cache
+C:\Users\Mitch\source\repos\Sparking Zero Audio Importer\obj\Release\net8.0-windows\SparkingZeroAudioImporter.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mitch\source\repos\Sparking Zero Audio Importer\obj\Release\net8.0-windows\SparkingZeroAudioImporter.csproj.CoreCompileInputs.cache
+C:\Users\Mitch\source\repos\Sparking Zero Audio Importer\obj\Release\net8.0-windows\Sparking Zero Audio Importer.dll.manifest
+C:\Users\Mitch\source\repos\Sparking Zero Audio Importer\obj\Release\net8.0-windows\Sparking Zero Audio Importer.application
+C:\Users\Mitch\source\repos\Sparking Zero Audio Importer\obj\Release\net8.0-windows\Sparking.F62B19D3.Up2Date
+C:\Users\Mitch\source\repos\Sparking Zero Audio Importer\obj\Release\net8.0-windows\Sparking Zero Audio Importer.dll
+C:\Users\Mitch\source\repos\Sparking Zero Audio Importer\obj\Release\net8.0-windows\refint\Sparking Zero Audio Importer.dll
+C:\Users\Mitch\source\repos\Sparking Zero Audio Importer\obj\Release\net8.0-windows\Sparking Zero Audio Importer.pdb
+C:\Users\Mitch\source\repos\Sparking Zero Audio Importer\obj\Release\net8.0-windows\SparkingZeroAudioImporter.genruntimeconfig.cache
+C:\Users\Mitch\source\repos\Sparking Zero Audio Importer\obj\Release\net8.0-windows\ref\Sparking Zero Audio Importer.dll
+C:\Users\Mitch\source\repos\Sparking Zero Audio Importer\bin\Release\net8.0-windows\VGAudioCli.exe
+C:\Users\Mitch\source\repos\Sparking Zero Audio Importer\bin\Release\net8.0-windows\NAudio.Vorbis.dll
+C:\Users\Mitch\source\repos\Sparking Zero Audio Importer\bin\Release\net8.0-windows\NVorbis.dll

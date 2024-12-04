@@ -109,8 +109,9 @@ namespace SparkingZeroAudioImporter
             for (int i = 0; i < files.Length; i++)
             {
                 string file = files[i];
+                string extension = Path.GetExtension(file).ToLowerInvariant();
 
-                if (Path.GetExtension(file).Equals(".wav", StringComparison.OrdinalIgnoreCase))
+                if (extension == ".wav" || extension == ".mp3" || extension == ".ogg")
                 {
                     bool exists = false;
                     foreach (DataGridViewRow row in dgvFiles.Rows)
@@ -136,10 +137,11 @@ namespace SparkingZeroAudioImporter
                 }
                 else
                 {
-                    MessageBox.Show("Only .wav files are supported.", "Invalid File", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Unsupported file format. Please use .wav, .mp3, or .ogg files.", "Invalid File", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
+
 
         /// <summary>
         /// Handles the Click event of the Process button to start processing the files.
@@ -169,10 +171,16 @@ namespace SparkingZeroAudioImporter
 
                 if (dgvFiles.Rows.Count == 0)
                 {
-                    MessageBox.Show("Please add at least one .wav file.", "No Files", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Please add at least one audio file.", "No Files", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
+                if (!HelperMethods.EnsureVGAudioCliExists())
+                {
+                    return;
+                }
+
+                // Check for duplicate song replacements
                 HashSet<string> songIdentifiers = new HashSet<string>();
                 foreach (DataGridViewRow row in dgvFiles.Rows)
                 {
@@ -190,47 +198,58 @@ namespace SparkingZeroAudioImporter
                     }
                 }
 
+                // Process each file
                 foreach (DataGridViewRow row in dgvFiles.Rows)
                 {
-                    string wavFile = row.Cells["FullPath"].Value as string;
+                    string inputFile = row.Cells["FullPath"].Value as string;
                     string songIdentifier = row.Cells["ReplaceWith"].Value as string;
                     bool isLooping = row.Cells["Loop"].Value != null && (bool)row.Cells["Loop"].Value;
 
-                    if (string.IsNullOrEmpty(wavFile))
+                    if (string.IsNullOrEmpty(inputFile))
                     {
                         MessageBox.Show("Please ensure all files have a valid file path.", "Incomplete Data", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
 
-                    HelperMethods.ProcessFile(wavFile, songIdentifier, isLooping, txtModName.Text.Trim(), baseModPath);
+                    HelperMethods.ProcessFile(inputFile, songIdentifier, isLooping, txtModName.Text.Trim(), baseModPath);
                 }
 
-                MessageBox.Show("Processing complete.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // Inform the user where the mod folder was created
+                string modFolderPath = Path.Combine(baseModPath, txtModName.Text.Trim());
+                MessageBox.Show($"Processing complete. Mod folder created at:\n{modFolderPath}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
                 // Logic when exporting HCA files only
                 if (dgvFiles.Rows.Count == 0)
                 {
-                    MessageBox.Show("Please add at least one .wav file.", "No Files", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Please add at least one audio file.", "No Files", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (!HelperMethods.EnsureVGAudioCliExists())
+                {
                     return;
                 }
 
                 foreach (DataGridViewRow row in dgvFiles.Rows)
                 {
-                    string wavFile = row.Cells["FullPath"].Value as string;
+                    string inputFile = row.Cells["FullPath"].Value as string;
                     bool isLooping = row.Cells["Loop"].Value != null && (bool)row.Cells["Loop"].Value;
 
-                    if (string.IsNullOrEmpty(wavFile))
+                    if (string.IsNullOrEmpty(inputFile))
                     {
                         MessageBox.Show("Please ensure all files have a valid file path.", "Incomplete Data", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
 
-                    HelperMethods.ProcessFileExportHCAOnly(wavFile, isLooping);
+                    HelperMethods.ProcessFileExportHCAOnly(inputFile, isLooping);
                 }
 
-                MessageBox.Show("HCA files exported successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // Inform the user where the HCA files were saved
+                string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
+                string outputDirectory = Path.Combine(desktopPath, "Sparking Zero Formatted Songs");
+                MessageBox.Show($"HCA files exported successfully to:\n{outputDirectory}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -244,7 +263,7 @@ namespace SparkingZeroAudioImporter
         private void btnClear_Click(object sender, EventArgs e)
         {
             dgvFiles.Rows.Clear();
-        }                         
+        }
 
 
         /// <summary>

@@ -1,8 +1,3 @@
-C:\Users\Mitch\source\repos\Sparking Zero Audio Importer\obj\Debug\SparkingZeroAudioImporter.csproj.AssemblyReference.cache
-C:\Users\Mitch\source\repos\Sparking Zero Audio Importer\obj\Debug\SparkingZeroAudioImporter.Form1.resources
-C:\Users\Mitch\source\repos\Sparking Zero Audio Importer\obj\Debug\Sparking_Zero_Audio_Importer.Properties.Resources.resources
-C:\Users\Mitch\source\repos\Sparking Zero Audio Importer\obj\Debug\SparkingZeroAudioImporter.csproj.GenerateResource.cache
-C:\Users\Mitch\source\repos\Sparking Zero Audio Importer\obj\Debug\SparkingZeroAudioImporter.csproj.CoreCompileInputs.cache
 C:\Users\Mitch\source\repos\Sparking Zero Audio Importer\bin\Debug\Sparking Zero Audio Importer.exe.config
 C:\Users\Mitch\source\repos\Sparking Zero Audio Importer\bin\Debug\Sparking Zero Audio Importer.exe
 C:\Users\Mitch\source\repos\Sparking Zero Audio Importer\bin\Debug\Sparking Zero Audio Importer.pdb
@@ -35,6 +30,15 @@ C:\Users\Mitch\source\repos\Sparking Zero Audio Importer\bin\Debug\System.Securi
 C:\Users\Mitch\source\repos\Sparking Zero Audio Importer\bin\Debug\System.Security.Principal.Windows.xml
 C:\Users\Mitch\source\repos\Sparking Zero Audio Importer\bin\Debug\System.Windows.Forms.xml
 C:\Users\Mitch\source\repos\Sparking Zero Audio Importer\bin\Debug\WindowsFormsIntegration.xml
+C:\Users\Mitch\source\repos\Sparking Zero Audio Importer\obj\Debug\SparkingZeroAudioImporter.csproj.AssemblyReference.cache
+C:\Users\Mitch\source\repos\Sparking Zero Audio Importer\obj\Debug\SparkingZeroAudioImporter.Form1.resources
+C:\Users\Mitch\source\repos\Sparking Zero Audio Importer\obj\Debug\Sparking_Zero_Audio_Importer.Properties.Resources.resources
+C:\Users\Mitch\source\repos\Sparking Zero Audio Importer\obj\Debug\SparkingZeroAudioImporter.csproj.GenerateResource.cache
+C:\Users\Mitch\source\repos\Sparking Zero Audio Importer\obj\Debug\SparkingZeroAudioImporter.csproj.CoreCompileInputs.cache
 C:\Users\Mitch\source\repos\Sparking Zero Audio Importer\obj\Debug\Sparking.F62B19D3.Up2Date
 C:\Users\Mitch\source\repos\Sparking Zero Audio Importer\obj\Debug\Sparking Zero Audio Importer.exe
 C:\Users\Mitch\source\repos\Sparking Zero Audio Importer\obj\Debug\Sparking Zero Audio Importer.pdb
+C:\Users\Mitch\source\repos\Sparking Zero Audio Importer\bin\Debug\Sparking Zero Audio Importer.exe.manifest
+C:\Users\Mitch\source\repos\Sparking Zero Audio Importer\bin\Debug\Sparking Zero Audio Importer.application
+C:\Users\Mitch\source\repos\Sparking Zero Audio Importer\obj\Debug\Sparking Zero Audio Importer.exe.manifest
+C:\Users\Mitch\source\repos\Sparking Zero Audio Importer\obj\Debug\Sparking Zero Audio Importer.application
