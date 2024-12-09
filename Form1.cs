@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Security.Principal;
 using System.Windows.Forms;
 
 namespace SparkingZeroAudioImporter
@@ -14,15 +15,34 @@ namespace SparkingZeroAudioImporter
         {
             InitializeComponent();
 
+            if (IsAdministrator())
+            {
+                MessageBox.Show(
+                    "This application should not be run as an administrator; drag-and-drop functionality will not work.\n\nHowever, you can still add files using the 'Add Files' button. This will open File Explorer for you to select the files.\n\nRestarting the application without elevated privileges will restore drag-and-drop functionality.","Administrator Mode Detected",MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            this.Load += Form1_Load;
+
             dgvFiles.AllowDrop = true;
             dgvFiles.DragEnter += DgvFiles_DragEnter;
             dgvFiles.DragDrop += DgvFiles_DragDrop;
 
-            InitializeDataGridViewColumns();
-
             chkExportHCAOnly.CheckedChanged += chkExportHCAOnly_CheckedChanged;
+
         }
 
+        /// <summary>
+        /// Simple method to check if the current user is an administrator. This is used to display a warning message
+        /// since I guess for security reasons, drag-and-drop doesn't work when the application is run as an administrator.
+        /// </summary>
+        /// <returns></returns>
+        private bool IsAdministrator()
+        {
+            using (WindowsIdentity identity = WindowsIdentity.GetCurrent())
+            {
+                WindowsPrincipal principal = new WindowsPrincipal(identity);
+                return principal.IsInRole(WindowsBuiltInRole.Administrator);
+            }
+        }
 
         /// <summary>
         /// Initializes the columns of the DataGridView. I did this here since it seemed easier than navigatng the designer.
@@ -30,51 +50,65 @@ namespace SparkingZeroAudioImporter
         /// </summary>
         private void InitializeDataGridViewColumns()
         {
-            dgvFiles.Columns.Clear();
-
-            DataGridViewTextBoxColumn fileNameColumn = new DataGridViewTextBoxColumn
+            try
             {
-                Name = "FileName",
-                HeaderText = "Audio to Import",
-                ReadOnly = true,
-                AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
-            };
-            dgvFiles.Columns.Add(fileNameColumn);
+                dgvFiles.Columns.Clear();
 
-            // Hidden column to store the full file path so the user only sees the file name and the table doesn't get cluttered
-            DataGridViewTextBoxColumn fullPathColumn = new DataGridViewTextBoxColumn
-            {
-                Name = "FullPath",
-                HeaderText = "Full Path",
-                ReadOnly = true,
-                Visible = false
-            };
-            dgvFiles.Columns.Add(fullPathColumn);
+                DataGridViewTextBoxColumn fileNameColumn = new DataGridViewTextBoxColumn
+                {
+                    Name = "FileName",
+                    HeaderText = "Audio to Import",
+                    ReadOnly = true,
+                    AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+                };
+                dgvFiles.Columns.Add(fileNameColumn);
 
-            DataGridViewComboBoxColumn replaceWithColumn = new DataGridViewComboBoxColumn
-            {
-                Name = "ReplaceWith",
-                HeaderText = "Sparking Zero Song to Replace",
-                DataSource = Constants.Songs,
-                DisplayMember = "DisplayName",
-                ValueMember = "FileName",
-                AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
-            };
-            dgvFiles.Columns.Add(replaceWithColumn);
+                DataGridViewTextBoxColumn fullPathColumn = new DataGridViewTextBoxColumn
+                {
+                    Name = "FullPath",
+                    HeaderText = "Full Path",
+                    ReadOnly = true,
+                    Visible = false
+                };
+                dgvFiles.Columns.Add(fullPathColumn);
 
-            DataGridViewCheckBoxColumn loopColumn = new DataGridViewCheckBoxColumn
+                DataGridViewComboBoxColumn replaceWithColumn = new DataGridViewComboBoxColumn
+                {
+                    Name = "ReplaceWith",
+                    HeaderText = "Sparking Zero Song to Replace",
+                    AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+                };
+
+                if (Constants.Songs != null && Constants.Songs.Count > 0)
+                {
+                    replaceWithColumn.DataSource = Constants.Songs;
+                    replaceWithColumn.DisplayMember = "DisplayName";
+                    replaceWithColumn.ValueMember = "FileName";
+                }
+                else
+                {
+                    MessageBox.Show("Constants.Songs is not initialized. The 'ReplaceWith' column will be empty.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+
+                dgvFiles.Columns.Add(replaceWithColumn);
+
+                DataGridViewCheckBoxColumn loopColumn = new DataGridViewCheckBoxColumn
+                {
+                    Name = "Loop",
+                    HeaderText = "Loop?",
+                    TrueValue = true,
+                    FalseValue = false,
+                    ValueType = typeof(bool),
+                    ThreeState = false,
+                    AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+                };
+                dgvFiles.Columns.Add(loopColumn);
+            }
+            catch (Exception ex)
             {
-                Name = "Loop",
-                HeaderText = "Loop?",
-                TrueValue = true,
-                FalseValue = false,
-                ValueType = typeof(bool),
-                ThreeState = false,
-                AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
-            };
-            dgvFiles.Columns.Add(loopColumn);
+                MessageBox.Show("Error initializing DataGridView columns:\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
-
 
         private void DgvFiles_DragEnter(object sender, DragEventArgs e)
         {
@@ -94,54 +128,9 @@ namespace SparkingZeroAudioImporter
         /// <param name="e">A <see cref="DragEventArgs"/> that contains the event data.</param>
         private void DgvFiles_DragDrop(object sender, DragEventArgs e)
         {
-            if (Constants.Songs == null || Constants.Songs.Count == 0)
-            {
-                MessageBox.Show("Constants.Songs Not Found", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
             string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
-
-            int totalSongs = Constants.Songs.Count;
-
-            int existingRows = dgvFiles.Rows.Count;
-
-            for (int i = 0; i < files.Length; i++)
-            {
-                string file = files[i];
-                string extension = Path.GetExtension(file).ToLowerInvariant();
-
-                if (extension == ".wav" || extension == ".mp3" || extension == ".ogg")
-                {
-                    bool exists = false;
-                    foreach (DataGridViewRow row in dgvFiles.Rows)
-                    {
-                        if (row.Cells["FullPath"].Value.ToString().Equals(file, StringComparison.OrdinalIgnoreCase))
-                        {
-                            exists = true;
-                            break;
-                        }
-                    }
-                    if (!exists)
-                    {
-                        int rowIndex = dgvFiles.Rows.Add();
-                        dgvFiles.Rows[rowIndex].Cells["FileName"].Value = Path.GetFileName(file);
-                        dgvFiles.Rows[rowIndex].Cells["FullPath"].Value = file;
-
-                        int songIndex = (existingRows + i) % totalSongs;
-
-                        dgvFiles.Rows[rowIndex].Cells["ReplaceWith"].Value = Constants.Songs[songIndex].FileName;
-
-                        dgvFiles.Rows[rowIndex].Cells["Loop"].Value = true;
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Unsupported file format. Please use .wav, .mp3, or .ogg files.", "Invalid File", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
+            AddFilesToDataGridView(files);
         }
-
 
         /// <summary>
         /// Handles the Click event of the Process button to start processing the files.
@@ -180,7 +169,6 @@ namespace SparkingZeroAudioImporter
                     return;
                 }
 
-                // Check for duplicate song replacements
                 HashSet<string> songIdentifiers = new HashSet<string>();
                 foreach (DataGridViewRow row in dgvFiles.Rows)
                 {
@@ -198,7 +186,6 @@ namespace SparkingZeroAudioImporter
                     }
                 }
 
-                // Process each file
                 foreach (DataGridViewRow row in dgvFiles.Rows)
                 {
                     string inputFile = row.Cells["FullPath"].Value as string;
@@ -214,13 +201,11 @@ namespace SparkingZeroAudioImporter
                     HelperMethods.ProcessFile(inputFile, songIdentifier, isLooping, txtModName.Text.Trim(), baseModPath);
                 }
 
-                // Inform the user where the mod folder was created
                 string modFolderPath = Path.Combine(baseModPath, txtModName.Text.Trim());
                 MessageBox.Show($"Processing complete. Mod folder created at:\n{modFolderPath}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                // Logic when exporting HCA files only
                 if (dgvFiles.Rows.Count == 0)
                 {
                     MessageBox.Show("Please add at least one audio file.", "No Files", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -246,7 +231,6 @@ namespace SparkingZeroAudioImporter
                     HelperMethods.ProcessFileExportHCAOnly(inputFile, isLooping);
                 }
 
-                // Inform the user where the HCA files were saved
                 string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
                 string outputDirectory = Path.Combine(desktopPath, "Sparking Zero Formatted Songs");
                 MessageBox.Show($"HCA files exported successfully to:\n{outputDirectory}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -291,5 +275,77 @@ namespace SparkingZeroAudioImporter
             }
         }
 
+        private void btnSelectFiles_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Title = "Select Audio Files";
+                openFileDialog.Filter = "Audio Files (*.wav;*.mp3;*.ogg)|*.wav;*.mp3;*.ogg";
+                openFileDialog.Multiselect = true;
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string[] files = openFileDialog.FileNames;
+
+                    AddFilesToDataGridView(files);
+                }
+            }
+        }
+
+        private void AddFilesToDataGridView(string[] files)
+        {
+            if (Constants.Songs == null || Constants.Songs.Count == 0)
+            {
+                MessageBox.Show("Constants.Songs Not Found", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            int totalSongs = Constants.Songs.Count;
+            int existingRows = dgvFiles.Rows.Count;
+
+            for (int i = 0; i < files.Length; i++)
+            {
+                string file = files[i];
+                string extension = Path.GetExtension(file).ToLowerInvariant();
+
+                if (extension == ".wav" || extension == ".mp3" || extension == ".ogg")
+                {
+                    bool exists = false;
+                    foreach (DataGridViewRow row in dgvFiles.Rows)
+                    {
+                        if (row.Cells["FullPath"].Value.ToString().Equals(file, StringComparison.OrdinalIgnoreCase))
+                        {
+                            exists = true;
+                            break;
+                        }
+                    }
+                    if (!exists)
+                    {
+                        int rowIndex = dgvFiles.Rows.Add();
+                        dgvFiles.Rows[rowIndex].Cells["FileName"].Value = Path.GetFileName(file);
+                        dgvFiles.Rows[rowIndex].Cells["FullPath"].Value = file;
+
+                        int songIndex = (existingRows + i) % totalSongs;
+
+                        // Only assign a song to replace if the column is visible
+                        if (dgvFiles.Columns["ReplaceWith"].Visible)
+                        {
+                            dgvFiles.Rows[rowIndex].Cells["ReplaceWith"].Value = Constants.Songs[songIndex].FileName;
+                        }
+
+                        dgvFiles.Rows[rowIndex].Cells["Loop"].Value = true;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Unsupported file format. Please use .wav, .mp3, or .ogg files.", "Invalid File", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            InitializeDataGridViewColumns();
+        }
     }
 }

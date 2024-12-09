@@ -74,7 +74,6 @@ namespace SparkingZeroAudioImporter
                 return baseModPath;
             }
 
-            // Attempt to find the Reloaded-II\Mods folder in common locations
             List<string> possiblePaths = new List<string>
             {
                 Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "Reloaded-II", "Mods"),
@@ -96,8 +95,7 @@ namespace SparkingZeroAudioImporter
                 }
             }
 
-            // If not found, prompt the user to select the Mods folder
-            MessageBox.Show("The Reloaded-II Mods folder could not be found. Please select the folder.", "Mods Folder Not Found", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("The Reloaded-II Mods folder could not be found. Please select the folder.\nIf you don't plan on using Reloaded-II you can ignore finding it's folder and click the checkbox to just create an .HCA file.", "Mods Folder Not Found", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             using (FolderBrowserDialog folderDialog = new FolderBrowserDialog())
             {

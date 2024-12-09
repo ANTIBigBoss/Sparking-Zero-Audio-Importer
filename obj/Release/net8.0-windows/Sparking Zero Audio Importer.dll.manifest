@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="Sparking Zero Audio Importer.exe" version="1.0.0.10" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="Sparking Zero Audio Importer.exe" version="1.0.0.11" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
   <description asmv2:iconFile="SSGSS Goku Phone.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
@@ -189,13 +189,13 @@
       <dsig:DigestValue>RMjfJ9VB4yWNiV/kY0UMLp5JzaHnnR8KXByh3GGTX4g=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Sparking Zero Audio Importer.dll" size="1558016">
+  <file name="Sparking Zero Audio Importer.dll" size="1560576">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>M0PC1e2Kh/o0eJKweU2TqmRWL4xLkwwF9NkVshs2JMY=</dsig:DigestValue>
+      <dsig:DigestValue>ZtN8is8i/J82+hB5MAvCBpWYom2sqdxZs1/EBbMvN+w=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Sparking Zero Audio Importer.dll.config" size="973">

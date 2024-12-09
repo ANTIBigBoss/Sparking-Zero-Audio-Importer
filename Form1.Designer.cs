@@ -39,6 +39,7 @@
             ReplaceWith = new System.Windows.Forms.DataGridViewTextBoxColumn();
             Loop = new System.Windows.Forms.DataGridViewTextBoxColumn();
             chkExportHCAOnly = new System.Windows.Forms.CheckBox();
+            btnSelectFiles = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)dgvFiles).BeginInit();
             SuspendLayout();
             // 
@@ -49,7 +50,7 @@
             btnProcess.Location = new System.Drawing.Point(9, 637);
             btnProcess.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             btnProcess.Name = "btnProcess";
-            btnProcess.Size = new System.Drawing.Size(749, 45);
+            btnProcess.Size = new System.Drawing.Size(771, 45);
             btnProcess.TabIndex = 3;
             btnProcess.Text = "Create Ryo Mod Folder";
             btnProcess.UseVisualStyleBackColor = true;
@@ -94,12 +95,12 @@
             // 
             btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            btnClear.Location = new System.Drawing.Point(550, 111);
+            btnClear.Location = new System.Drawing.Point(667, 113);
             btnClear.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             btnClear.Name = "btnClear";
-            btnClear.Size = new System.Drawing.Size(208, 32);
+            btnClear.Size = new System.Drawing.Size(114, 32);
             btnClear.TabIndex = 8;
-            btnClear.Text = "Clear Entire Table";
+            btnClear.Text = "Clear Table";
             btnClear.UseVisualStyleBackColor = true;
             btnClear.Click += btnClear_Click;
             // 
@@ -114,7 +115,7 @@
             dgvFiles.Location = new System.Drawing.Point(9, 145);
             dgvFiles.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             dgvFiles.Name = "dgvFiles";
-            dgvFiles.Size = new System.Drawing.Size(748, 488);
+            dgvFiles.Size = new System.Drawing.Size(771, 488);
             dgvFiles.TabIndex = 9;
             // 
             // FilePath
@@ -149,6 +150,19 @@
             chkExportHCAOnly.UseVisualStyleBackColor = false;
             chkExportHCAOnly.CheckedChanged += chkExportHCAOnly_CheckedChanged;
             // 
+            // btnSelectFiles
+            // 
+            btnSelectFiles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnSelectFiles.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            btnSelectFiles.Location = new System.Drawing.Point(551, 113);
+            btnSelectFiles.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnSelectFiles.Name = "btnSelectFiles";
+            btnSelectFiles.Size = new System.Drawing.Size(114, 32);
+            btnSelectFiles.TabIndex = 11;
+            btnSelectFiles.Text = "Add Files";
+            btnSelectFiles.UseVisualStyleBackColor = true;
+            btnSelectFiles.Click += btnSelectFiles_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -156,6 +170,7 @@
             BackgroundImage = (System.Drawing.Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             ClientSize = new System.Drawing.Size(1386, 688);
+            Controls.Add(btnSelectFiles);
             Controls.Add(chkExportHCAOnly);
             Controls.Add(dgvFiles);
             Controls.Add(btnClear);
@@ -167,7 +182,8 @@
             Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
             Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             Name = "Form1";
-            Text = "ANTIBigBoss' Sparking Zero Audio Import Tool - Version 1.2";
+            Text = "ANTIBigBoss' Sparking Zero Audio Import Tool - Version 1.3";
+            Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)dgvFiles).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -184,6 +200,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ReplaceWith;
         private System.Windows.Forms.DataGridViewTextBoxColumn Loop;
         private System.Windows.Forms.CheckBox chkExportHCAOnly;
+        private System.Windows.Forms.Button btnSelectFiles;
     }
 }
 

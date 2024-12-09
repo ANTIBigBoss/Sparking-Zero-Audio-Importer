@@ -397,5 +397,7 @@ namespace SparkingZeroAudioImporter
             new SongInfo { DisplayName = "Sparking - Genkai Toppa X Survivor", FileName = "M_1100_SPK.hca" }
 
         };
+
+        // TODO: Separate Sparking from BGM to make it easier to find the song you want to replace, then I can set up filtering with a checkbox or something that populates or hides Sparking/BGM songs this will also be helpful for when/if I add the ability to swap voice lines around as well so we can sort by character or something like that
     }
 }

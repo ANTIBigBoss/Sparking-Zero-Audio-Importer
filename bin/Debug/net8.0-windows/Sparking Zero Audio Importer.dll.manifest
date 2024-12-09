@@ -468,13 +468,13 @@
       <dsig:DigestValue>TgS6g/yYxgtclfwBaE6FrRnVwTXsAODG9fSj8Nwilk8=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Sparking Zero Audio Importer.dll" size="1559552">
+  <file name="Sparking Zero Audio Importer.dll" size="1562112">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>cE+iTLvjkhMyrCuJ7sqnCLK7u4o+qkr04L62p+WA+G4=</dsig:DigestValue>
+      <dsig:DigestValue>JImEwSaGGpOlliHiOg4unZ64WEPkkXra7m1y7LE2cCw=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Sparking Zero Audio Importer.dll.config" size="973">
